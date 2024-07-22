@@ -1,0 +1,68 @@
+2024-07-22 15:56:25,292 INFO  [org.keycloak.common.Profile] (main) Preview features enabled: declarative-user-profile
+ 2024-07-22 15:56:25,943 INFO  [com.jdev.CustomRealmResourceProviderFactory] (build-8) CustomRealmResourceProviderFactory.getId ----- PROVIDER_ID - custom-endpoint
+ 2024-07-22 15:56:25,943 INFO  [com.jdev.CustomRealmResourceProviderFactory] (build-8) CustomRealmResourceProviderFactory.getId ----- PROVIDER_ID - custom-endpoint
+ 2024-07-22 15:56:25,948 INFO  [com.jdev.CustomRealmResourceProviderFactory] (build-8) CustomRealmResourceProviderFactory.getId ----- PROVIDER_ID - custom-endpoint
+ 2024-07-22 15:56:25,948 WARN  [org.keycloak.services] (build-8) KC-SERVICES0047: custom-endpoint (com.jdev.CustomRealmResourceProviderFactory) is implementing the internal SPI realm-restapi-extension. This SPI is internal and may change without notice
+ 2024-07-22 15:56:25,948 INFO  [com.jdev.CustomRealmResourceProviderFactory] (build-8) CustomRealmResourceProviderFactory.getId ----- PROVIDER_ID - custom-endpoint
+ 2024-07-22 15:56:26,898 INFO  [com.jdev.CustomRealmResourceProviderFactory] (build-8) CustomRealmResourceProviderFactory.getId ----- PROVIDER_ID - custom-endpoint
+ ERROR: Failed to run 'build' command.
+ ERROR: io.quarkus.builder.BuildException: Build failure: Build failed due to errors
+ 	[error]: Build step io.quarkus.arc.deployment.ArcProcessor#validate threw an exception: javax.enterprise.inject.spi.DeploymentException: javax.enterprise.inject.UnsatisfiedResolutionException: Unsatisfied dependency for type org.keycloak.models.KeycloakSession and qualifiers [@Default]
+ 	- java member: com.jdev.endpoint.CustomEndpointResource():session
+ 	- declared on CLASS bean [types=[com.jdev.endpoint.CustomEndpointResource, java.lang.Object], qualifiers=[@Default, @Any], target=com.jdev.endpoint.CustomEndpointResource]
+ 	at io.quarkus.arc.processor.BeanDeployment.processErrors(BeanDeployment.java:1217)
+ 	at io.quarkus.arc.processor.BeanDeployment.init(BeanDeployment.java:287)
+ 	at io.quarkus.arc.processor.BeanProcessor.initialize(BeanProcessor.java:143)
+ 	at io.quarkus.arc.deployment.ArcProcessor.validate(ArcProcessor.java:517)
+ 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+ 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+ 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+ 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+ 	at io.quarkus.deployment.ExtensionLoader$3.execute(ExtensionLoader.java:909)
+ 	at io.quarkus.builder.BuildContext.run(BuildContext.java:281)
+ 	at org.jboss.threads.ContextHandler$1.runWith(ContextHandler.java:18)
+ 	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2449)
+ 	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1478)
+ 	at java.base/java.lang.Thread.run(Thread.java:833)
+ 	at org.jboss.threads.JBossThread.run(JBossThread.java:501)
+ Caused by: javax.enterprise.inject.UnsatisfiedResolutionException: Unsatisfied dependency for type org.keycloak.models.KeycloakSession and qualifiers [@Default]
+ 	- java member: com.jdev.endpoint.CustomEndpointResource():session
+ 	- declared on CLASS bean [types=[com.jdev.endpoint.CustomEndpointResource, java.lang.Object], qualifiers=[@Default, @Any], target=com.jdev.endpoint.CustomEndpointResource]
+ 	at io.quarkus.arc.processor.Beans.resolveInjectionPoint(Beans.java:440)
+ 	at io.quarkus.arc.processor.BeanInfo.init(BeanInfo.java:539)
+ 	at io.quarkus.arc.processor.BeanDeployment.init(BeanDeployment.java:275)
+ 	... 13 more
+
+ ERROR: Build failure: Build failed due to errors
+ 	[error]: Build step io.quarkus.arc.deployment.ArcProcessor#validate threw an exception: javax.enterprise.inject.spi.DeploymentException: javax.enterprise.inject.UnsatisfiedResolutionException: Unsatisfied dependency for type org.keycloak.models.KeycloakSession and qualifiers [@Default]
+ 	- java member: com.jdev.endpoint.CustomEndpointResource():session
+ 	- declared on CLASS bean [types=[com.jdev.endpoint.CustomEndpointResource, java.lang.Object], qualifiers=[@Default, @Any], target=com.jdev.endpoint.CustomEndpointResource]
+ 	at io.quarkus.arc.processor.BeanDeployment.processErrors(BeanDeployment.java:1217)
+ 	at io.quarkus.arc.processor.BeanDeployment.init(BeanDeployment.java:287)
+ 	at io.quarkus.arc.processor.BeanProcessor.initialize(BeanProcessor.java:143)
+ 	at io.quarkus.arc.deployment.ArcProcessor.validate(ArcProcessor.java:517)
+ 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+ 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+ 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+ 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+ 	at io.quarkus.deployment.ExtensionLoader$3.execute(ExtensionLoader.java:909)
+ 	at io.quarkus.builder.BuildContext.run(BuildContext.java:281)
+ 	at org.jboss.threads.ContextHandler$1.runWith(ContextHandler.java:18)
+ 	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2449)
+ 	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1478)
+ 	at java.base/java.lang.Thread.run(Thread.java:833)
+ 	at org.jboss.threads.JBossThread.run(JBossThread.java:501)
+ Caused by: javax.enterprise.inject.UnsatisfiedResolutionException: Unsatisfied dependency for type org.keycloak.models.KeycloakSession and qualifiers [@Default]
+ 	- java member: com.jdev.endpoint.CustomEndpointResource():session
+ 	- declared on CLASS bean [types=[com.jdev.endpoint.CustomEndpointResource, java.lang.Object], qualifiers=[@Default, @Any], target=com.jdev.endpoint.CustomEndpointResource]
+ 	at io.quarkus.arc.processor.Beans.resolveInjectionPoint(Beans.java:440)
+ 	at io.quarkus.arc.processor.BeanInfo.init(BeanInfo.java:539)
+ 	at io.quarkus.arc.processor.BeanDeployment.init(BeanDeployment.java:275)
+ 	... 13 more
+
+ ERROR: javax.enterprise.inject.UnsatisfiedResolutionException: Unsatisfied dependency for type org.keycloak.models.KeycloakSession and qualifiers [@Default]
+ 	- java member: com.jdev.endpoint.CustomEndpointResource():session
+ 	- declared on CLASS bean [types=[com.jdev.endpoint.CustomEndpointResource, java.lang.Object], qualifiers=[@Default, @Any], target=com.jdev.endpoint.CustomEndpointResource]
+ ERROR: Unsatisfied dependency for type org.keycloak.models.KeycloakSession and qualifiers [@Default]
+ 	- java member: com.jdev.endpoint.CustomEndpointResource():session
+ 	- declared on CLASS bean [types=[com.jdev.endpoint.CustomEndpointResource, java.lang.Object], qualifiers=[@Default, @Any], target=com.jdev.endpoint.CustomEndpointResource]

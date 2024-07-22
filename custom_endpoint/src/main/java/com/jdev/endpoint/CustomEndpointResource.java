@@ -16,8 +16,7 @@ import org.keycloak.services.resource.RealmResourceProvider;
 //https://github.com/el-abdel/keycloak-custom-rest-endpoint
 //https://github.com/dasniko/keycloak-extensions-demo/tree/main/rest-endpoint
 @Provider
-//@Path("/custom")
-//@jakarta.ws.rs.Path("/custom")
+@javax.ws.rs.Path("/")
 public class CustomEndpointResource implements RealmResourceProvider {
 
     private static final Logger logger = Logger.getLogger(CustomEndpointResource.class);
@@ -28,7 +27,7 @@ public class CustomEndpointResource implements RealmResourceProvider {
         this.session = session;
     }
 
-    @javax.ws.rs.Path("/custom")
+    @javax.ws.rs.Path("custom")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Operation(
