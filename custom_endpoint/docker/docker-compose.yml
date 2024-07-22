@@ -1,0 +1,52 @@
+services:
+
+  #keycloak
+  postgres_for_keycloak:
+    container_name: postgres_for_keycloak
+    image: "postgres:${POSTGRES_TAG}"
+    volumes:
+      - postgres_data_for_keycloak:/var/lib/postgresql/data
+    networks:
+      - keycloak_network24
+    environment:
+      - POSTGRES_DB=keycloakdb
+      - POSTGRES_USER=keycloakAdmin
+      - POSTGRES_PASSWORD=keycloakAdmin_!1
+    ports:
+      - 9100:5432
+    restart: unless-stopped
+
+  keycloak24:
+    container_name: keycloak24
+    build:
+      context: ./keycloak
+      args:
+        KEYCLOAK_VERSION: ${KEYCLOAK_TAG}
+    environment:
+      - KEYCLOAK_ADMIN=admin
+      - KEYCLOAK_ADMIN_PASSWORD=admin
+    #"--health-enabled=true", "--metrics-enabled=true",
+#    "--spi-admin-realm-restapi-extension-custom-endpoint-enabled=true",
+    command: ["start-dev", "--import-realm", "--features=declarative-user-profile", "--log='console,file'", "--log-file=/tmp/keycloakLog.log", "--log-level='INFO'"]
+#https://www.keycloak.org/server/logging
+#, "--log='console,file'", "--log-file=/tmp/keycloakLog.log"
+    networks:
+      - keycloak_network24
+    volumes:
+      - ./keycloak/providers:/opt/keycloak/providers
+      - ./keycloak/import:/opt/keycloak/data/import
+      - ./keycloak/export:/tmp/export
+    ports:
+      - 9101:8080
+      - 9102:8443
+    restart: unless-stopped
+    depends_on:
+      - postgres_for_keycloak
+
+volumes:
+  postgres_data_for_keycloak:
+    name: "postgres_data_for_keycloak"
+
+networks:
+  keycloak_network24:
+    name: keycloak_network24
