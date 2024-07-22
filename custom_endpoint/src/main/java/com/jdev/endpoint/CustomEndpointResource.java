@@ -28,7 +28,7 @@ public class CustomEndpointResource implements RealmResourceProvider {
         this.session = session;
     }
 
-    @jakarta.ws.rs.Path("/custom")
+    @javax.ws.rs.Path("/custom")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Operation(
