@@ -1,0 +1,61 @@
+2024-07-22 11:25:36,412 INFO  [com.jdev.CustomRealmResourceProviderFactory] (build-39) CustomRealmResourceProviderFactory.getId ----- PROVIDER_ID - custom-endpoint
+ 2024-07-22 11:25:36,412 INFO  [com.jdev.CustomRealmResourceProviderFactory] (build-39) CustomRealmResourceProviderFactory.getId ----- PROVIDER_ID - custom-endpoint
+ 2024-07-22 11:25:36,422 INFO  [com.jdev.CustomRealmResourceProviderFactory] (build-39) CustomRealmResourceProviderFactory.getId ----- PROVIDER_ID - custom-endpoint
+ 2024-07-22 11:25:36,422 WARN  [org.keycloak.services] (build-39) KC-SERVICES0047: custom-endpoint (com.jdev.CustomRealmResourceProviderFactory) is implementing the internal SPI realm-restapi-extension. This SPI is internal and may change without notice
+ 2024-07-22 11:25:36,422 INFO  [com.jdev.CustomRealmResourceProviderFactory] (build-39) CustomRealmResourceProviderFactory.getId ----- PROVIDER_ID - custom-endpoint
+ 2024-07-22 11:25:37,215 INFO  [com.jdev.CustomRealmResourceProviderFactory] (build-39) CustomRealmResourceProviderFactory.getId ----- PROVIDER_ID - custom-endpoint
+ 2024-07-22 11:25:39,654 INFO  [io.quarkus.deployment.QuarkusAugmentor] (main) Quarkus augmentation completed in 4290ms
+ 2024-07-22 11:25:40,323 INFO  [org.keycloak.common.Profile] (main) Preview features enabled: declarative-user-profile
+ 2024-07-22 11:25:40,657 INFO  [org.keycloak.quarkus.runtime.hostname.DefaultHostnameProvider] (main) Hostname settings: Base URL: <unset>, Hostname: <request>, Strict HTTPS: false, Path: <request>, Strict BackChannel: false, Admin URL: <unset>, Admin: <request>, Port: -1, Proxied: false
+ 2024-07-22 11:25:40,696 INFO  [com.jdev.CustomRealmResourceProviderFactory] (main) CustomRealmResourceProviderFactory.getId ----- PROVIDER_ID - custom-endpoint
+ 2024-07-22 11:25:40,697 INFO  [com.jdev.CustomRealmResourceProviderFactory] (main) CustomRealmResourceProviderFactory.init -----
+ 2024-07-22 11:25:40,697 INFO  [com.jdev.CustomRealmResourceProviderFactory] (main) CustomRealmResourceProviderFactory.getId ----- PROVIDER_ID - custom-endpoint
+
+
+
+
+After call test method- com.jdev.RestCallKeycloakIT.test_keycloakCustomEndpoint
+
+
+
+
+
+
+ 2024-07-22 11:27:02,248 INFO  [com.jdev.endpoint.CustomEndpointResource] (executor-thread-0) CUSTOM RealmResourceProvider.getResource
+ 2024-07-22 11:27:02,253 ERROR [org.keycloak.services.error.KeycloakErrorHandler] (executor-thread-0) Uncaught server error: org.jboss.resteasy.spi.InternalServerErrorException: RESTEASY003815: Subresource for target class has no jax-rs annotations.: com.jdev.endpoint.CustomEndpointResource
+ 	at org.jboss.resteasy.core.ResourceLocatorInvoker.invokeOnTargetObject(ResourceLocatorInvoker.java:170)
+ 	at org.jboss.resteasy.core.ResourceLocatorInvoker.invoke(ResourceLocatorInvoker.java:141)
+ 	at org.jboss.resteasy.core.ResourceLocatorInvoker.invoke(ResourceLocatorInvoker.java:32)
+ 	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:492)
+ 	at org.jboss.resteasy.core.SynchronousDispatcher.lambda$invoke$4(SynchronousDispatcher.java:261)
+ 	at org.jboss.resteasy.core.SynchronousDispatcher.lambda$preprocess$0(SynchronousDispatcher.java:161)
+ 	at org.jboss.resteasy.core.interception.jaxrs.PreMatchContainerRequestContext.filter(PreMatchContainerRequestContext.java:364)
+ 	at org.jboss.resteasy.core.SynchronousDispatcher.preprocess(SynchronousDispatcher.java:164)
+ 	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:247)
+ 	at io.quarkus.resteasy.runtime.standalone.RequestDispatcher.service(RequestDispatcher.java:73)
+ 	at io.quarkus.resteasy.runtime.standalone.VertxRequestHandler.dispatch(VertxRequestHandler.java:151)
+ 	at io.quarkus.resteasy.runtime.standalone.VertxRequestHandler.handle(VertxRequestHandler.java:82)
+ 	at io.quarkus.resteasy.runtime.standalone.VertxRequestHandler.handle(VertxRequestHandler.java:42)
+ 	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1284)
+ 	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:173)
+ 	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:140)
+ 	at io.quarkus.vertx.http.runtime.StaticResourcesRecorder$2.handle(StaticResourcesRecorder.java:84)
+ 	at io.quarkus.vertx.http.runtime.StaticResourcesRecorder$2.handle(StaticResourcesRecorder.java:71)
+ 	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1284)
+ 	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:173)
+ 	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:140)
+ 	at io.quarkus.vertx.http.runtime.VertxHttpRecorder$6.handle(VertxHttpRecorder.java:430)
+ 	at io.quarkus.vertx.http.runtime.VertxHttpRecorder$6.handle(VertxHttpRecorder.java:408)
+ 	at io.vertx.ext.web.impl.RouteState.handleContext(RouteState.java:1284)
+ 	at io.vertx.ext.web.impl.RoutingContextImplBase.iterateNext(RoutingContextImplBase.java:173)
+ 	at io.vertx.ext.web.impl.RoutingContextImpl.next(RoutingContextImpl.java:140)
+ 	at org.keycloak.quarkus.runtime.integration.web.QuarkusRequestFilter.lambda$createBlockingHandler$0(QuarkusRequestFilter.java:82)
+ 	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$14.runWith(VertxCoreRecorder.java:576)
+ 	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2449)
+ 	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1478)
+ 	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+ 	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+ 	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+ 	at java.base/java.lang.Thread.run(Thread.java:833)
+
+ 2024-07-22 11:27:02,255 INFO  [com.jdev.endpoint.CustomEndpointResource] (executor-thread-0) CUSTOM RealmResourceProvider.close

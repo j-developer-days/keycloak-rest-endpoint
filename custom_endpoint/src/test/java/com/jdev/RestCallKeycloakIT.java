@@ -7,7 +7,8 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import jakarta.ws.rs.core.MediaType;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import javax.ws.rs.core.HttpHeaders;
 import java.util.stream.Collectors;
@@ -17,11 +18,13 @@ public class RestCallKeycloakIT {
 
     private static final String KEYCLOAK_URL_HTTP = "http://localhost:9101/";
     private static final String KEYCLOAK_REALM_URL_PART = "realms/master";
+    private static final String KEYCLOAK_TEST_REALM_URL_PART = "realms/test_realm";
 
-    @Test
-    void test_keycloakCustomEndpoint() {
+    @ValueSource(strings = {KEYCLOAK_REALM_URL_PART, KEYCLOAK_TEST_REALM_URL_PART})
+    @ParameterizedTest
+    void test_keycloakCustomEndpoint(String keycloakRealm) {
         Response response = getRequestSpecificationWithContentType().header(getKeycloakHeader())
-                .get(KEYCLOAK_URL_HTTP + KEYCLOAK_REALM_URL_PART + "/custom-endpoint/custom");
+                .get(KEYCLOAK_URL_HTTP + keycloakRealm + "/custom-endpoint/custom");
         showResponse(response, "custom");
         Assertions.assertEquals(200, response.statusCode());
     }

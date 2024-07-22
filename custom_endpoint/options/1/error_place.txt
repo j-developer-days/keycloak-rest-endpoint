@@ -1,0 +1,9 @@
+org.jboss.resteasy.resteasy_jaxrs.i18n.Messages_$bundle.subresourceHasNoJaxRsAnnotations$str
+org.jboss.resteasy.resteasy_jaxrs.i18n.Messages_$bundle.subresourceHasNoJaxRsAnnotations
+org.jboss.resteasy.core.ResourceLocatorInvoker.invokeOnTargetObject
+
+if (!GetRestful.isSubResourceClass(clazz))
+         {
+            String msg = Messages.MESSAGES.subresourceHasNoJaxRsAnnotations(clazz.getName());
+            throw new InternalServerErrorException(msg);
+         }
