@@ -16,8 +16,8 @@
     <name>${project.artifactId}</name>
 
     <properties>
-        <!--        <dependency.scope>provided</dependency.scope>-->
-        <dependency.scope>compile</dependency.scope>
+                <dependency.scope>provided</dependency.scope>
+<!--        <dependency.scope>compile</dependency.scope>-->
         <keycloak.version>21.1.1</keycloak.version>
     </properties>
 
